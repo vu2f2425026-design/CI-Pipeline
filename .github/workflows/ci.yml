@@ -1,0 +1,23 @@
+
+name: CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check Project Files
+        run: ls
+
+      - name: Test HTML File
+        run: test -f index.html
+
+      - name: Success Message
+        run: echo "CI Pipeline Executed Successfully!"
